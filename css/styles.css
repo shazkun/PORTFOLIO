@@ -1,0 +1,409 @@
+/* Default styles */
+@import url('https://path-to-your-font-files/hk-modular.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+body {
+  background: linear-gradient(120deg, #004d40, #131974, #47b39b);
+  background-size: 200% 200%;
+  animation: auroraFlow 10s ease-in-out infinite;
+}
+
+@keyframes auroraFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 100%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card-body {
+  background-color: rgb(61, 59, 59);
+  color: white;
+  width: 18rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.profile {
+  border-radius: 25%;
+  border: 1.5px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 6px 20px rgba(0, 0, 0, 0.19);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+    0 12px 40px rgba(0, 0, 0, 0.19);
+}
+
+.spacer {
+  height: 200px;
+  /* Adjust as needed */
+}
+
+.section {
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  color: white
+}
+
+.section-skills {
+
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+  color: white
+}
+
+.skills-bg {
+  background-image: url('IMG/BG-SKILLS.png');
+}
+
+
+.intro-p {
+  padding-top: 10%;
+  align-items: justify;
+}
+
+.section.visible {
+  opacity: 1;
+}
+
+.spacer {
+  background-color: #949eac3d;
+  min-height: 35px;
+  max-height: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Adjust the shadow properties as needed */
+}
+
+
+
+
+
+
+.navbar-main {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Transparent white (adjust the last value for transparency) */
+  backdrop-filter: blur(10px);
+  /* Optional: adds a blur effect */
+  z-index: 1000;
+  /* Ensure the navbar appears above other content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* Shadow effect */
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  margin-left: 30%;
+}
+
+
+
+
+
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-main .container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  ;
+
+}
+
+.navbar-main .navbar-brand {
+  font-family: 'HK Modular', sans-serif;
+  font-size: 30px;
+  /* Adjust size as needed */
+  color: #ffffff;
+  /* White text */
+  text-shadow: 2px 2px 0 #09093a, 4px 4px 0 #000080;
+  /* Blue shadow effect */
+}
+
+.navbar-main .navbar-nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  /* Ensure the nav items are centered */
+}
+
+/* Align the navbar-toggler to the right */
+.navbar-main .navbar-toggler {
+  margin-left: auto;
+}
+
+.carousel-item img {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Media queries for different resolutions */
+@media (max-width: 576px) {
+  .navbar-main {
+    left: 5%;
+    right: 5%;
+    margin-left: 45%;
+  }
+
+  .navbar-main .container-fluid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .navbar-main {
+    width: 80%;
+    /* Adjust width for tablet screens */
+    left: 10%;
+    right: 10%;
+    margin-left: 42%;
+  }
+
+  .navbar-main .container-fluid {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .navbar-main {
+    width: 70%;
+    /* Adjust width for medium-sized screens */
+    left: 15%;
+    right: 15%;
+    margin-left: 38%;
+  }
+
+  .navbar-main .container-fluid {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .navbar-main {
+    width: 65%;
+    /* Adjust width for large screens */
+    left: 17.5%;
+    right: 17.5%;
+    margin-left: 35%;
+  }
+
+  .navbar-main .container-fluid {
+    flex-direction: row;
+  }
+
+}
+
+@media (min-width: 1201px) {
+  .navbar-main {
+    width: 60%;
+    /* Adjust width for extra-large screens */
+    left: 20%;
+    right: 20%;
+  }
+
+  .navbar-main .container-fluid {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 0rem) {
+  #hero-1785 {
+    /* 200px - 300px - leaving extra space for the navigation */
+    padding: clamp(12.5rem, 25.95vw, 18.75em) 1rem;
+    /* prevents the topper line from causing an overflow */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  #hero-1785 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  #hero-1785 .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 46.875rem;
+  }
+
+  #hero-1785 .cs-title {
+    /* 49px - 84px */
+    font-size: clamp(3.0625rem, 6vw, 5.25rem);
+  }
+
+  #hero-1785 .cs-title,
+  #hero-1785 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+
+  #hero-1785 .cs-text {
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+
+  #hero-1785 .cs-button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #hero-1785 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 12.5rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    color: var(--bodyTextColorWhite);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+
+  #hero-1785 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000000;
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+
+  #hero-1785 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+
+  #hero-1785 .cs-graphic {
+    width: 100%;
+    min-width: 120rem;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    transform: translateX(-50%);
+  }
+
+  #hero-1785 .cs-graphic-dark {
+    display: none;
+  }
+
+  #hero-1785 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+
+  #hero-1785 .cs-background:before {
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+    opacity: 0.7;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  #hero-1785 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Large Desktop - 1920px */
+@media only screen and (min-width: 120rem) {
+  #hero-1785 {
+    /* this ties the padding bottom value to the size of the screen width. The wider the image gets the taller it gets, meaning it will get clsoer and closer to the content. This makes the padding bottom value grow with the screen size so it accounts for the growing height of the svg graphic getting taller */
+    padding-bottom: 14vw;
+  }
+}
