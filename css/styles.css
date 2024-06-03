@@ -145,6 +145,13 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-main {
+    transition: top 0.3s; /* Add smooth transition for navbar */
+}
+
+.navbar-main.hidden {
+    top: -100px; /* Hide navbar above the viewport */
+}
 .navbar-main .container-fluid {
   display: flex;
   justify-content: center;
@@ -155,7 +162,6 @@ body {
   font-size: 20px;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  ;
 
 }
 

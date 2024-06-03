@@ -24,5 +24,18 @@ $(document).ready(function() {
     $(window).on('scroll', checkVisibility);
 });
 
+window.addEventListener('scroll', function() {
+    var section2 = document.getElementById('about');
+    var navbar = document.querySelector('.navbar-main');
 
+    // Get the position of the second section relative to the top of the viewport
+    var section2Position = section2.getBoundingClientRect().top;
+
+    // Toggle the 'hidden' class on the navbar based on the scroll position
+    if (section2Position <= 0) {
+        navbar.classList.remove('hidden');
+    } else {
+        navbar.classList.add('hidden');
+    }
+});
 

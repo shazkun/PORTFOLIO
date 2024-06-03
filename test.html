@@ -1,22 +1,50 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Navbar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
 <style>
-.div-border {
-  border-inline-end: 10px solid; /* Set border for right side */
-  border-block-end: 10px solid; /* Set border for bottom side */
-  border-image-source: radial-gradient(circle at bottom right, black, transparent 50%); /* Set radial gradient for bottom right */
-  border-image-slice: 1; /* Set border image slice */
-  padding: 10%; /* Add padding */
+.navbar {
+    transition: top 0.3s; /* Add smooth transition for navbar */
 }
 
-
-
+.navbar.hidden {
+    top: -100px; /* Hide navbar above the viewport */
+}
 </style>
-<body>
-  <div class="div-border">test</div>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-main text-white">
+      <!-- Your navbar HTML code -->
+    </nav>
+</div>
+
+<div id="section1" class="section" style="height: 1000px; background-color: #f0f0f0;">
+    <!-- Content of the first section -->
+</div>
+
+<div id="section2" class="section" style="height: 1000px; background-color: #f8f8f8;">
+    <!-- Content of the second section -->
+</div>
+
+<script>window.addEventListener('scroll', function() {
+    var section2 = document.getElementById('hero-1785');
+    var navbar = document.querySelector('.navbar-main');
+
+    // Get the position of the second section relative to the top of the viewport
+    var section2Position = section2.getBoundingClientRect().top;
+
+    // Toggle the 'hidden' class on the navbar based on the scroll position
+    if (section2Position <= 0) {
+        navbar.classList.remove('hidden');
+    } else {
+        navbar.classList.add('hidden');
+    }
+});
+</script>
+
 </body>
 </html>
