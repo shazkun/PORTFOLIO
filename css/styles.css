@@ -25,7 +25,7 @@ body {
   background-color: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 }
 
@@ -137,14 +137,7 @@ body {
 }
 
 /* ─── Shared Slide Content ────────────────────────────────────────────────────── */
-/* .section-title {
-  height: auto;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.12em;
-  padding-top: 70px;
-} */
+
 
 /* Ensure Bootstrap containers fill slide height properly */
 .slide .container {
@@ -159,9 +152,9 @@ body {
 .profile-img {
   max-width: 320px;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 20px;
   border: 6px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ─── Skills Slide ────────────────────────────────────────────────────────────── */
@@ -195,7 +188,7 @@ body {
 /* ─── Video / Edits Slide ─────────────────────────────────────────────────────── */
 .video-player {
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
   max-width: 100%;
   display: block;
 }
@@ -281,13 +274,13 @@ body {
   text-decoration: none;
   border-radius: 50px;
   background: linear-gradient(135deg, #6a5cff, #00c6ff);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
 }
 
 /* ─── Shared Carousel Layout ──────────────────────────────────────────────────── */
@@ -300,25 +293,28 @@ body {
 
 .carousel-btn {
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: white;
-  font-size: 2.5rem;
-  line-height: 1;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  width: 44px;
+  height: 64px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
+  clip-path: polygon(0 4px, 4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%);
 }
 
 .carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
+  background: rgba(165, 216, 255, 0.15);
+  border-color: #a5d8ff;
+  color: #a5d8ff;
+  transform: scaleY(1.05);
 }
 
 /* ─── Dots ────────────────────────────────────────────────────────────────────── */
@@ -364,7 +360,7 @@ body {
   width: 100%;
   max-height: 55vh;
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
   display: block;
 }
 
@@ -386,25 +382,32 @@ body {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-slide {
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 1rem;
-}
-
+/* ─── Project Card ───────────────────────────────────────────────────────────── */
 .project-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 24px;
-  padding: 3rem 2.5rem;
+  padding: 4rem 2.5rem;
+  /* increased top & bottom padding */
   max-width: 520px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  /* Even shadow on all sides */
+  box-shadow: none;
   transition: transform 0.3s;
+  position: relative;
+  /* ensures shadow is visible outside the card */
+}
+
+/* Optional: add margin in slide for extra breathing room */
+.project-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  /* adds spacing around the card */
 }
 
 .project-card:hover {
@@ -448,9 +451,9 @@ body {
 /* ─── Responsive ──────────────────────────────────────────────────────────────── */
 @media (max-width: 576px) {
   .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.8rem;
+    width: 34px;
+    height: 52px;
+    font-size: 1rem;
   }
 
   .project-card {
@@ -478,28 +481,31 @@ body {
 
 .carousel-btn {
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: white;
-  font-size: 2.5rem;
-  line-height: 1;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  width: 44px;
+  height: 64px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
+  clip-path: polygon(0 4px, 4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%);
   position: relative;
   z-index: 10;
   pointer-events: all;
 }
 
 .carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
+  background: rgba(165, 216, 255, 0.15);
+  border-color: #a5d8ff;
+  color: #a5d8ff;
+  transform: scaleY(1.05);
 }
 
 .carousel-dots {
@@ -551,7 +557,7 @@ body {
   width: 100%;
   max-height: 55vh;
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
   display: block;
 }
 
@@ -597,7 +603,7 @@ body {
   max-width: 520px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s;
 }
 
@@ -678,7 +684,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 24px;
   padding: 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.35);
 }
 
 .contact-info {
